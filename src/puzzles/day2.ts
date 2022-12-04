@@ -1,7 +1,7 @@
-import {intoArrays, readFileIntoString} from '../input';
+import {readFileIntoString} from '../input';
 
 const rawInput: string = readFileIntoString('src/inputs/day2.txt');
-const strategyGuide: string[][] = intoArrays(rawInput.split('\r\n'), ' ');
+const strategyGuide: string[][] = rawInput.split('\r\n').map((line) => line.split(' '));
 
 const partOne = (): number => {
     let score = 0;
