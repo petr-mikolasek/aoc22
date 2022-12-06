@@ -12,7 +12,7 @@ const partTwo = (): number => {
 
 console.time('doSomething');
 
-console.log(partOne());
+// console.log(partOne());
 // console.log(partTwo());
 
 console.timeEnd('doSomething');
