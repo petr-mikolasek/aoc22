@@ -1,6 +1,4 @@
-import {readFileIntoString} from '../input';
-
-const rawInput: string = readFileIntoString('src/inputs/day.txt');
+import {rawInput} from '../inputs/day';
 
 const partOne = (): number => {
     return 0;

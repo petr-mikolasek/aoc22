@@ -29,3 +29,7 @@ export const getNeighbors = (point: coordinate, height: number, width: number, d
 export const distanceFromStart = (loc: coordinate): number => {
     return Math.abs(loc.x) + Math.abs(loc.y);
 };
+
+export const distanceBetween = (loc1: coordinate, loc2: coordinate): number => {
+    return Math.sqrt((loc1.x - loc2.x) ** 2 + (loc1.y - loc2.y) ** 2);
+};
