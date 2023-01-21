@@ -1,8 +1,8 @@
 import {rawInput} from '../inputs/day9';
 import {distanceBetween} from '../stuff';
-import {coordinate} from '../types';
+import {Coordinate} from '../types';
 
-const move = (pos: coordinate, dir: string): coordinate => {
+const move = (pos: Coordinate, dir: string): Coordinate => {
     switch (dir) {
         case 'U':
             return {x: pos.x, y: pos.y + 1};
@@ -21,7 +21,7 @@ const move = (pos: coordinate, dir: string): coordinate => {
 
 const partOneAndTwo = (inputStr: string, ropeLenght: number): number => {
     const moves: string[] = inputStr.split('\n');
-    let rope: coordinate[] = new Array(ropeLenght).fill({x: 0, y: 0});
+    let rope: Coordinate[] = new Array(ropeLenght).fill({x: 0, y: 0});
     let tailVisited = new Set<string>(['0,0']);
 
     for (let m of moves) {

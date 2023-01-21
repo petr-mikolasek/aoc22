@@ -1,4 +1,4 @@
-import {coordinate} from './types';
+import {Coordinate} from './types';
 
 export const binaryIntoDec = (arrayBin: Array<number>): number => {
     let arrayLength = arrayBin.length;
@@ -9,8 +9,8 @@ export const binaryIntoDec = (arrayBin: Array<number>): number => {
     return decimalNumber;
 };
 
-export const getNeighbors = (point: coordinate, height: number, width: number, diag: boolean): coordinate[] => {
-    let possibleMoves: coordinate[] = [];
+export const getNeighbors = (point: Coordinate, height: number, width: number, diag: boolean): Coordinate[] => {
+    let possibleMoves: Coordinate[] = [];
     if (point.x < 0 || point.y < 0 || point.x >= height || point.y >= width)
         throw console.error('Coordinate out of grid.');
 
@@ -26,10 +26,10 @@ export const getNeighbors = (point: coordinate, height: number, width: number, d
     return possibleMoves;
 };
 
-export const distanceFromStart = (loc: coordinate): number => {
+export const distanceFromStart = (loc: Coordinate): number => {
     return Math.abs(loc.x) + Math.abs(loc.y);
 };
 
-export const distanceBetween = (loc1: coordinate, loc2: coordinate): number => {
+export const distanceBetween = (loc1: Coordinate, loc2: Coordinate): number => {
     return Math.sqrt((loc1.x - loc2.x) ** 2 + (loc1.y - loc2.y) ** 2);
 };

@@ -1,4 +1,4 @@
-import {rawInput} from '../inputs/day';
+import {input, testInput} from '../inputs/day';
 
 const partOne = (): number => {
     return 0;
