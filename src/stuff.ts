@@ -9,19 +9,19 @@ export const binaryIntoDec = (arrayBin: Array<number>): number => {
     return decimalNumber;
 };
 
-export const getNeighbors = (point: Coordinate, height: number, width: number, diag: boolean): Coordinate[] => {
+export const getNeighbors = (point: Coordinate, width: number, height: number, diag: boolean): Coordinate[] => {
     let possibleMoves: Coordinate[] = [];
-    if (point.x < 0 || point.y < 0 || point.x >= height || point.y >= width)
+    if (point.x < 0 || point.y < 0 || point.x >= width || point.y >= height)
         throw console.error('Coordinate out of grid.');
 
     if (point.x > 0 && point.y > 0 && diag) possibleMoves.push({x: point.x - 1, y: point.y - 1});
     if (point.x > 0) possibleMoves.push({x: point.x - 1, y: point.y});
-    if (point.x > 0 && point.y < width - 1 && diag) possibleMoves.push({x: point.x - 1, y: point.y + 1});
+    if (point.x > 0 && point.y < height - 1 && diag) possibleMoves.push({x: point.x - 1, y: point.y + 1});
     if (point.y > 0) possibleMoves.push({x: point.x, y: point.y - 1});
-    if (point.y < width - 1) possibleMoves.push({x: point.x, y: point.y + 1});
-    if (point.x < height - 1 && point.y > 0 && diag) possibleMoves.push({x: point.x + 1, y: point.y - 1});
-    if (point.x < height - 1) possibleMoves.push({x: point.x + 1, y: point.y});
-    if (point.x < height - 1 && point.y < width - 1 && diag) possibleMoves.push({x: point.x + 1, y: point.y + 1});
+    if (point.y < height - 1) possibleMoves.push({x: point.x, y: point.y + 1});
+    if (point.x < width - 1 && point.y > 0 && diag) possibleMoves.push({x: point.x + 1, y: point.y - 1});
+    if (point.x < width - 1) possibleMoves.push({x: point.x + 1, y: point.y});
+    if (point.x < width - 1 && point.y < height - 1 && diag) possibleMoves.push({x: point.x + 1, y: point.y + 1});
 
     return possibleMoves;
 };
