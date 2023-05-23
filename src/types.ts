@@ -8,3 +8,5 @@ export type Monkey = {
     targetFalse: number;
     insCount: number;
 };
+
+export type RecursiveList = Array<number | RecursiveList>;
