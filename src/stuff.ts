@@ -9,6 +9,11 @@ export const binaryIntoDec = (arrayBin: Array<number>): number => {
     return decimalNumber;
 };
 
+export const parseCoordinate = (entry: string): Coordinate => {
+    let splitEntry = entry.split(',');
+    return {x: parseInt(splitEntry[0]), y: parseInt(splitEntry[1])};
+};
+
 export const getNeighbors = (point: Coordinate, width: number, height: number, diag: boolean): Coordinate[] => {
     let possibleMoves: Coordinate[] = [];
     if (point.x < 0 || point.y < 0 || point.x >= width || point.y >= height)
