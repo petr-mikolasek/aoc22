@@ -31,10 +31,18 @@ export const getNeighbors = (point: Coordinate, width: number, height: number, d
     return possibleMoves;
 };
 
-export const distanceFromStart = (loc: Coordinate): number => {
-    return Math.abs(loc.x) + Math.abs(loc.y);
-};
-
 export const distanceBetween = (loc1: Coordinate, loc2: Coordinate): number => {
     return Math.sqrt((loc1.x - loc2.x) ** 2 + (loc1.y - loc2.y) ** 2);
 };
+
+export const manhattanDistanceBetween = (loc1: Coordinate, loc2: Coordinate): number => {
+    return Math.abs(loc1.x - loc2.x) + Math.abs(loc1.y - loc2.y);
+};
+
+console.assert(distanceBetween({x: -1, y: 1}, {x: -1, y: 1}) == 0);
+console.assert(distanceBetween({x: 0, y: 0}, {x: 3, y: 4}) == 5);
+console.assert(distanceBetween({x: -2, y: 1}, {x: 1, y: -3}) == 5);
+
+console.assert(manhattanDistanceBetween({x: -1, y: 1}, {x: -1, y: 1}) == 0);
+console.assert(manhattanDistanceBetween({x: 0, y: 0}, {x: 3, y: 4}) == 7);
+console.assert(manhattanDistanceBetween({x: -2, y: 1}, {x: 1, y: -3}) == 7);

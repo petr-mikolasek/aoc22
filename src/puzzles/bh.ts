@@ -1,20 +1,21 @@
 import {input, testInput} from '../inputs/day';
 
-const partOne = (): number => {
+const partOne = (input: string): number => {
     return 0;
 };
 
-const partTwo = (): number => {
+const partTwo = (input: string): number => {
     return 0;
 };
 
 console.time('doSomething');
 
-// console.log(partOne());
-// console.log(partTwo());
+// console.log(partOne(input));
+// console.log(partTwo(input));
 
 console.timeEnd('doSomething');
 
 // tests
-console.assert(partOne() === 1, 'part1');
-console.assert(partTwo() === 1, 'part2');
+console.assert(input, 'Input is empty')
+console.assert(partOne(testInput) === 1, 'part1');
+console.assert(partTwo(testInput) === 1, 'part2');

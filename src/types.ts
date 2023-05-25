@@ -10,3 +10,9 @@ export type Monkey = {
 };
 
 export type RecursiveList = Array<number | RecursiveList>;
+
+export type SensorReading = {
+    sensor: Coordinate;
+    beacon: Coordinate;
+    dist: number;
+}
