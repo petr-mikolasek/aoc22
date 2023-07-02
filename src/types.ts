@@ -15,4 +15,21 @@ export type SensorReading = {
     sensor: Coordinate;
     beacon: Coordinate;
     dist: number;
-}
+};
+
+type Valve = {
+    flowRate: number;
+    open: boolean;
+    connections: string[];
+    distances?: {[target: string]: number};
+};
+
+export type Valves = {[name: string]: Valve};
+
+export type PathToValves = {
+    curr: string;
+    active: string[];
+    timeLeft: number;
+    steps: string[];
+    releasedPressure: number;
+};
